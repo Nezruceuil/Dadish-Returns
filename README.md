@@ -11,7 +11,7 @@ https://nezruceuil.itch.io/dadish-returns
 ## Controls:
 
 # With Keyboard:
-arrow keys or A/Q'left' and D'right' and mouse
+arrow keys or Q'left' and D'right' and mouse
 
 # With Controller:
 joystick or joypad for movements and chose

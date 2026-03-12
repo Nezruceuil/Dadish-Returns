@@ -1,8 +1,9 @@
 # Dadish Returns
 
-Is a Dadish fan game i made i because i didn't wanna wait
-until the next dadish game came out !
-and you can play it for free yey !
+It's a Dadish fan game I made because I didn't want to wait
+until the next dadish game comes out!
+
+and you can play it for free yey!
 
 ## Installation:
 

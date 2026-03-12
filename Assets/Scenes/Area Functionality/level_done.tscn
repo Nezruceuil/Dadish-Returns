@@ -1,0 +1,134 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj73j40d083b7"]
+
+[ext_resource type="Script" uid="uid://4l2w6chqrb1g" path="res://Assets/Scripts/level_done.gd" id="1_g1at7"]
+[ext_resource type="Texture2D" uid="uid://3vcd0ub8tn4k" path="res://Assets/Sprites/dadish idle-Sheet.png" id="1_pygn7"]
+[ext_resource type="Texture2D" uid="uid://dnxjqey18ctam" path="res://Assets/Sprites/dadish_kids.png" id="2_3qrdy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qrdy"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="level done" type="Node2D"]
+script = ExtResource("1_g1at7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -115.0
+offset_top = -64.0
+offset_right = 115.0
+offset_bottom = 65.0
+
+[node name="Panel" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3qrdy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5.1, 5.1)
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="Node2D"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("2_3qrdy")
+offset = Vector2(0, 35)
+region_enabled = true
+region_rect = Rect2(0, 0, 21, 27)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
+position = Vector2(-4, 41)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_pygn7")
+region_enabled = true
+region_rect = Rect2(44, 22, 22, 22)
+
+[node name="stars" type="Node2D" parent="."]
+
+[node name="Star_1" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_2" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_3" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_4" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_5" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_6" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_7" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_8" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_9" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Star_10" type="Label" parent="stars"]
+modulate = Color(1, 1, 0, 1)
+offset_right = 18.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 32
+text = "*"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.8
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 49.000004
+offset_top = 49.0
+offset_right = 257.0
+offset_bottom = 94.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 32
+text = "space to skip!"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

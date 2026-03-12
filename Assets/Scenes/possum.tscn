@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://efhkkw1togms"]
+
+[ext_resource type="Texture2D" uid="uid://3vcd0ub8tn4k" path="res://Assets/Sprites/dadish idle-Sheet.png" id="1_ovl0h"]
+
+[node name="possum" type="Sprite2D"]
+position = Vector2(0, -11)
+texture = ExtResource("1_ovl0h")
+region_enabled = true
+region_rect = Rect2(44, 66, 22, 22)

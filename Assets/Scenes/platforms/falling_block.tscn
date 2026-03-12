@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://1gud1x7nv7cu"]
+
+[ext_resource type="Script" uid="uid://4ukq2bde4l16" path="res://Assets/Scripts/falling_block.gd" id="1_akqe0"]
+[ext_resource type="Texture2D" uid="uid://gwnfu06smm0h" path="res://Assets/Sprites/block.png" id="2_iun51"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_77omo"]
+size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nbsdt"]
+size = Vector2(16, 1.5)
+
+[node name="falling_block" type="StaticBody2D"]
+script = ExtResource("1_akqe0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_77omo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_iun51")
+region_enabled = true
+region_rect = Rect2(0, 16, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -8.25)
+shape = SubResource("RectangleShape2D_nbsdt")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

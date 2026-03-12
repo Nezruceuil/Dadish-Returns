@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfureopgeqh1r"]
+
+[ext_resource type="Script" uid="uid://djxypnrpu0c6e" path="res://Assets/Scripts/yellow_ballon.gd" id="1_m6f4f"]
+[ext_resource type="Texture2D" uid="uid://gwnfu06smm0h" path="res://Assets/Sprites/block.png" id="2_363vk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ipg6e"]
+radius = 5.0
+height = 12.0
+
+[node name="Ballon" type="Area2D"]
+script = ExtResource("1_m6f4f")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_363vk")
+offset = Vector2(0.5, 0)
+region_enabled = true
+region_rect = Rect2(32, 64, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_ipg6e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

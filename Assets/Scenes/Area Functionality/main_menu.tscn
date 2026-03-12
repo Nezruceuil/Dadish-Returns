@@ -1,0 +1,578 @@
+[gd_scene load_steps=35 format=3 uid="uid://b8ji3cexw6e7d"]
+
+[ext_resource type="Script" uid="uid://ckswntt3rc8d1" path="res://Assets/Scripts/main_menu.gd" id="1_tanm1"]
+[ext_resource type="FontFile" uid="uid://desra5hdkb6k5" path="res://Assets/Sprites/joystix monospace.otf" id="2_cbhea"]
+[ext_resource type="Texture2D" uid="uid://05gtygedv578" path="res://Assets/Sprites/Capture d’écran 2026-02-09 à 20.49.40.png" id="2_tanm1"]
+[ext_resource type="FontFile" uid="uid://c0nyn42gsh7g" path="res://Assets/Sprites/04B_19__.TTF" id="3_tanm1"]
+[ext_resource type="Script" uid="uid://bisk0vs5j2kqi" path="res://Assets/Scripts/audio.gd" id="5_jy5j5"]
+[ext_resource type="Script" uid="uid://c84l5a4a2x1dq" path="res://Assets/Scripts/fullscreen_control.gd" id="6_cvaw0"]
+[ext_resource type="PackedScene" uid="uid://ca7tuy4hb8two" path="res://Assets/Scenes/Area Functionality/music.tscn" id="7_cvaw0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fsbqx"]
+texture = ExtResource("2_tanm1")
+modulate_color = Color(0.46423507, 0.46423507, 0.46423507, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77rv3"]
+bg_color = Color(0, 0.654902, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.4862745)
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tanm1"]
+bg_color = Color(1.853034e-06, 0.4291153, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.4862745)
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbhea"]
+bg_color = Color(1.1743903e-05, 0.8279352, 3.85046e-07, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 5
+shadow_color = Color(0, 0, 0, 0.4862745)
+shadow_size = 5
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbhea"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rpvqk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_65at2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jy5j5"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_707fm"]
+button_index = 3
+pressed = true
+
+[sub_resource type="InputEventKey" id="InputEventKey_lljl3"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_8lhyj"]
+events = [SubResource("InputEventJoypadButton_707fm"), SubResource("InputEventKey_lljl3")]
+
+[sub_resource type="DPITexture" id="DPITexture_lljl3"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 1.5
+
+[sub_resource type="DPITexture" id="DPITexture_707fm"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 1.5
+
+[sub_resource type="DPITexture" id="DPITexture_8lhyj"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+base_scale = 1.5
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rpvqk"]
+color = Color(1, 1, 1, 1)
+grow_begin = -5.0
+grow_end = -7.0
+thickness = 12
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_65at2"]
+color = Color(0.08169622, 0.31939033, 1, 1)
+grow_begin = -5.0
+grow_end = 5.0
+thickness = 12
+
+[sub_resource type="DPITexture" id="DPITexture_p4o0j"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".75\"/></svg>
+"
+base_scale = 1.5
+
+[sub_resource type="DPITexture" id="DPITexture_p1fbn"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\"/></svg>
+"
+base_scale = 1.5
+
+[sub_resource type="DPITexture" id="DPITexture_3q6nk"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#fefefe\" fill-opacity=\".37\"/></svg>
+"
+base_scale = 1.5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cvaw0"]
+
+[sub_resource type="DPITexture" id="DPITexture_jy5j5"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"2.333\"/><path fill=\"#1a1a1a\" d=\"m11.5 3.75-5.6 5.6-1.7-1.7-1.5 1.5 3.2 3.2 7.1-7.1z\"/></svg>
+"
+base_scale = 5.0
+
+[sub_resource type="DPITexture" id="DPITexture_cvaw0"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" fill-opacity=\".5\" rx=\"2.333\"/></svg>
+"
+base_scale = 5.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jy5j5"]
+color = Color(1.5305579e-05, 0.8801575, 7.70092e-07, 1)
+grow_begin = -3.0
+grow_end = -2.0
+thickness = 6
+vertical = true
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lljl3"]
+color = Color(0.8478745, 1, 0.8320779, 1)
+grow_end = -2.0
+thickness = 6
+vertical = true
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_lljl3"]
+button_index = 3
+pressed = true
+
+[sub_resource type="InputEventKey" id="InputEventKey_707fm"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_707fm"]
+events = [SubResource("InputEventJoypadButton_lljl3"), SubResource("InputEventKey_707fm")]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tanm1")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_fsbqx")
+
+[node name="MainButtons" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -258.5
+offset_top = -348.0
+offset_right = 258.5
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+
+[node name="Button" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.5191619, 0.5191619, 0.5191619, 1)
+theme_override_colors/font_hover_color = Color(0.12773594, 0.12773594, 0.12773594, 1)
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_77rv3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tanm1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbhea")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhea")
+text = "START!"
+
+[node name="Button3" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.5191619, 0.5191619, 0.5191619, 1)
+theme_override_colors/font_hover_color = Color(0.12773594, 0.12773594, 0.12773594, 1)
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_77rv3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tanm1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbhea")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhea")
+text = "Options"
+
+[node name="Button2" type="Button" parent="MainButtons"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.5191619, 0.5191619, 0.5191619, 1)
+theme_override_colors/font_hover_color = Color(0.12773594, 0.12773594, 0.12773594, 1)
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_77rv3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tanm1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cbhea")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhea")
+text = "advancements"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 149.0
+offset_top = 59.0
+offset_right = 209.0
+offset_bottom = 220.0
+grow_horizontal = 2
+scale = Vector2(0.7, 0.7)
+theme_override_colors/font_color = Color(0.9137255, 0, 0.7647059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 160
+text = "Dadish Returns"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -222.5
+offset_top = 169.0
+offset_right = 222.5
+offset_bottom = 250.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0.5747319, 0.91682076, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 80
+text = "(FAN GAME)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Options" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.5
+offset_top = -158.0
+offset_right = 360.5
+offset_bottom = 297.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+offset_left = 7.5
+offset_top = 3.0
+offset_right = 273.5
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "OPTIONS:"
+
+[node name="quit_options" type="Button" parent="Options"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.0
+offset_bottom = 77.0
+grow_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.7434819, 0.74348193, 0.7434818, 1)
+theme_override_colors/font_focus_color = Color(0.74509805, 0.74509805, 0.74509805, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.78775924, 0.78775924, 0.78775924, 1)
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rpvqk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_65at2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jy5j5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhea")
+shortcut = SubResource("Shortcut_8lhyj")
+text = "x"
+
+[node name="Label2" type="Label" parent="Options"]
+layout_mode = 1
+offset_left = 9.5
+offset_top = 134.0
+offset_right = 244.5
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 48
+text = "Music:"
+
+[node name="Music" type="HSlider" parent="Options"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 12.5
+offset_top = -41.5
+offset_right = -30.5
+offset_bottom = -11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = SubResource("DPITexture_lljl3")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_707fm")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_8lhyj")
+theme_override_styles/slider = SubResource("StyleBoxLine_rpvqk")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_65at2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_65at2")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_jy5j5")
+audio_bus_name = "Music"
+
+[node name="Label3" type="Label" parent="Options"]
+layout_mode = 1
+offset_left = 11.5
+offset_top = 240.0
+offset_right = 442.5
+offset_bottom = 288.0
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 40
+text = "Sound effect:"
+
+[node name="SFX" type="HSlider" parent="Options"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 14.5
+offset_top = 60.5
+offset_right = -32.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_icons/grabber = SubResource("DPITexture_p4o0j")
+theme_override_icons/grabber_highlight = SubResource("DPITexture_p1fbn")
+theme_override_icons/grabber_disabled = SubResource("DPITexture_3q6nk")
+theme_override_styles/slider = SubResource("StyleBoxLine_rpvqk")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_65at2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_65at2")
+max_value = 1.0
+step = 0.05
+value = 1.0
+script = ExtResource("5_jy5j5")
+audio_bus_name = "SFX"
+
+[node name="FullscreenControl" type="CheckBox" parent="Options"]
+layout_mode = 0
+offset_left = 6.5
+offset_top = 350.0
+offset_right = 430.5
+offset_bottom = 446.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cvaw0")
+theme_override_icons/checked = SubResource("DPITexture_jy5j5")
+theme_override_icons/unchecked = SubResource("DPITexture_cvaw0")
+keep_pressed_outside = true
+text = " Fullscreen"
+script = ExtResource("6_cvaw0")
+
+[node name="Controller" type="CheckBox" parent="Options"]
+layout_mode = 0
+offset_left = 15.5
+offset_top = 73.0
+offset_right = 726.5
+offset_bottom = 169.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cvaw0")
+theme_override_icons/checked = SubResource("DPITexture_jy5j5")
+theme_override_icons/unchecked = SubResource("DPITexture_cvaw0")
+keep_pressed_outside = true
+text = "play  with controller"
+
+[node name="advancements" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 124.0
+offset_top = 1.0
+offset_right = 996.0
+offset_bottom = 648.0
+
+[node name="1" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 26.0
+offset_right = 848.0
+offset_bottom = 117.118645
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Thats shiny ! "
+
+[node name="2" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 115.0
+offset_right = 848.0
+offset_bottom = 203.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Beat 1 boss "
+
+[node name="3" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 214.0
+offset_right = 848.0
+offset_bottom = 302.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 60
+text = "I hate burnt radishes!"
+
+[node name="4" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 310.0
+offset_right = 848.0
+offset_bottom = 398.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 67
+text = "I'M Flying !!!"
+
+[node name="5" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 409.0
+offset_right = 848.0
+offset_bottom = 497.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Beat 2 boss  "
+
+[node name="6" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 505.0
+offset_right = 848.0
+offset_bottom = 593.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Beat 3 boss "
+
+[node name="7" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 604.0
+offset_right = 848.0
+offset_bottom = 692.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Beat 4 boss "
+
+[node name="8" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 700.0
+offset_right = 848.0
+offset_bottom = 788.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Beat the Final boss "
+
+[node name="9" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 799.0
+offset_right = 848.0
+offset_bottom = 887.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Get all of the stars"
+
+[node name="10" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 895.0
+offset_right = 848.0
+offset_bottom = 983.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "Oh...my...gosh... "
+
+[node name="11" type="Label" parent="advancements"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 994.0
+offset_right = 848.0
+offset_bottom = 1082.0
+scale = Vector2(0.75, 0.75)
+theme_override_fonts/font = ExtResource("3_tanm1")
+theme_override_font_sizes/font_size = 64
+text = "I love this trio !"
+
+[node name="VSlider" type="VSlider" parent="advancements"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 13.0
+offset_right = 76.0
+offset_bottom = 631.0
+mouse_default_cursor_shape = 14
+theme_override_styles/slider = SubResource("StyleBoxLine_jy5j5")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_lljl3")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_lljl3")
+max_value = 50.0
+value = 50.0
+
+[node name="quit_options2" type="Button" parent="advancements"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -76.0
+offset_bottom = 77.0
+grow_horizontal = 0
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.8560673, 0.8560673, 0.85606724, 1)
+theme_override_colors/font_focus_color = Color(0.85490197, 0.85490197, 0.85490197, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.8089985, 0.80899817, 0.80899817, 1)
+theme_override_fonts/font = ExtResource("2_cbhea")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rpvqk")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_65at2")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_jy5j5")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbhea")
+shortcut = SubResource("Shortcut_707fm")
+text = "X"
+
+[node name="Music" parent="." instance=ExtResource("7_cvaw0")]
+layout_mode = 1
+
+[connection signal="pressed" from="MainButtons/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MainButtons/Button3" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MainButtons/Button2" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Options/quit_options" to="." method="_on_quit_options_pressed"]
+[connection signal="value_changed" from="Options/Music" to="Options/Music" method="_on_value_changed"]
+[connection signal="toggled" from="Options/FullscreenControl" to="Options/FullscreenControl" method="_on_toggled"]
+[connection signal="toggled" from="Options/Controller" to="." method="_on_controller_toggled"]
+[connection signal="value_changed" from="advancements/VSlider" to="." method="_on_v_slider_value_changed"]
+[connection signal="pressed" from="advancements/quit_options2" to="." method="_on_quit_options_pressed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b7hprd24wf7p0"
+path="res://.godot/imported/Dadish - 14:02:2026 16.07.mp3-40f59e49fef900c0a224245453afa879.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sprites/Dadish - 14:02:2026 16.07.mp3"
+dest_files=["res://.godot/imported/Dadish - 14:02:2026 16.07.mp3-40f59e49fef900c0a224245453afa879.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

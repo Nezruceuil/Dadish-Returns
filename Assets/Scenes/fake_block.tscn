@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://daprvjokinnsi"]
+
+[ext_resource type="Texture2D" uid="uid://gwnfu06smm0h" path="res://Assets/Sprites/block.png" id="1_aphdh"]
+
+[node name="fake_block" type="Sprite2D"]
+modulate = Color(0.87545645, 0.8754566, 0.8754564, 1)
+position = Vector2(0, -8)
+texture = ExtResource("1_aphdh")
+region_enabled = true
+region_rect = Rect2(144, 112, 16, 16)

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsjrhpsrpsp1a"]
+
+[ext_resource type="Script" uid="uid://cot8aghllg5bi" path="res://Assets/Scripts/area_exit.gd" id="1_pwf35"]
+[ext_resource type="Texture2D" uid="uid://dnxjqey18ctam" path="res://Assets/Sprites/dadish_kids.png" id="2_pwf35"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwf35"]
+radius = 7.0
+
+[node name="AreaExit" type="Area2D"]
+script = ExtResource("1_pwf35")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -14)
+texture = ExtResource("2_pwf35")
+offset = Vector2(0, 0.5)
+region_enabled = true
+region_rect = Rect2(0, 0, 21, 27)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+shape = SubResource("CircleShape2D_pwf35")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="ready" from="." to="." method="_on_ready"]

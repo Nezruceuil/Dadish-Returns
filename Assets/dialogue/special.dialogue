@@ -1,0 +1,69 @@
+~ start
+
+if GameManager.has_dialogue == false:
+	set GameManager.pause = false
+	=> END
+
+if Dialogue.special == 1:
+	if GameManager.current_area == 22:
+		Mustard: Hello Dadish!
+		Dadish: Who are you?
+		Mustard: Wait...
+		Mustard: I was the mount of the Foreman in Dadish 2!!!
+		Dadish: Oh... So why aren't you with him?
+		Mustard: He got a robot that looks just like me and then threw me out!!!
+		Dadish: And why are you with me?
+		Mustard: I don't like Durnak!
+		Dadish: Makes sense to me!
+		Mustard: Hop on!
+	elif GameManager.current_area == 23:
+		Dadish: What are you doing here?
+		Mustard: I'm with you!
+		Dadish: You know it's easier for me to do it alone!
+		Mustard: What?!
+		Dadish: Nothing...
+		Mustard: Ok!
+		Dadish: ...
+		Mustard: Hop on!
+	elif GameManager.current_area == 24:
+		Mustard: Hello again!
+		Dadish: Can I do a level alone please...
+		Mustard: NOPE!
+		Dadish: ...
+		Mustard: Hop on!
+		Dadish: Here we go again...
+	elif GameManager.current_area == 25:
+		Mustard: Hi again!
+		Dadish: I really thought that I'll do this level alone.
+		Mustard: Not really.
+		Dadish: Ok.
+		Mustard: Hop on!
+		Dadish: ...
+		Mustard: ...
+		Dadish: ...
+		Mustard: What are you waiting for?
+		Dadish: ...
+		Mustard: Hop on!
+	elif GameManager.current_area == 26:
+		Mustard: Hello again!
+		Dadish: Not again...
+		Mustard: ...
+		Mustard: Hop on!
+	elif GameManager.current_area == 27:
+		Mustard: Hi again!
+		Dadish: Hello!
+		Mustard: Why is there a white marshmallow behind us?
+		Dadish: That's not a marshmallow but a giant white radish!
+		Mustard: Okay...
+		Mustard: Hop on!
+	elif GameManager.current_area == 29:
+		Dadish: Hello!
+		Mustard: Hello!
+		Dadish: Wait, why isn't there a cool dialogue?
+		Mustard: I was running out of ideas!
+		Dadish: Okay!
+
+
+set GameManager.pause = false
+
+=> END

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://vjek4rq7m6qq"]
+
+[ext_resource type="Script" uid="uid://cmausrbksguuo" path="res://Assets/Scripts/chase_camera.gd" id="1_e7wu5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7wu5"]
+size = Vector2(4169.167, 395)
+
+[node name="Chase Camera" type="Area2D"]
+script = ExtResource("1_e7wu5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.000061, -1)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_e7wu5")
+
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="body_shape_exited" from="." to="." method="_on_body_shape_exited"]

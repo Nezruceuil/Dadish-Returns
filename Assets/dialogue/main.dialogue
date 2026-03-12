@@ -1,0 +1,267 @@
+~ start
+
+
+if GameManager.character == 1:
+	if GameManager.character == 1:
+		Screech: Screeech!!!
+		Screech: Screeech!!!
+		set PlayerData.advancements[9] = 1
+	elif GameManager.character == 10:
+		Screech: Screeech!!!
+		Kid: Oh my gosh !
+		Screech: Screeech!!!
+		Kid: Oh my gosh...
+		set PlayerData.advancements[9] = 1
+	else:
+		Screech: Screeech!!!
+		Kid: Oh my gosh !
+elif GameManager.current_area == 1:
+	Kid: You can double jump?!
+	Dadish: ...
+	Kid: ...
+	Dadish: ...
+	Kid: Okay, I know I'm the third kid to say that.
+	Kid: But it's funny!
+elif GameManager.current_area == 2:
+	Kid: Do you like my hat?
+	Dadish: Yes?
+	Kid: I blend perfectly with the trees!
+	Dadish: There is not a single tree...
+	Kid: oh !
+elif GameManager.current_area == 3:
+	Kid: I love walking on clouds!
+	Dadish: Wait... aren't you a cloud...
+	Kid: WHAT?!
+	Dadish: Sorry, but you blend right in...
+	Kid: ok !
+elif GameManager.current_area == 4:
+	Kid: Did you see?
+	Dadish: What?
+	Kid: The yellow balloon!
+	Dadish: Yes.
+	Kid: That's the first one I saw in my life!
+	Dadish: Wait... there are always yellow balloons at your birthday.
+	Kid: No, I mean in a game!
+	Dadish: Oh... okay, makes sense!
+elif GameManager.current_area == 5:
+	Screech: Screeech!!!
+	Dadish: Oh my gosh !
+elif GameManager.current_area == 6:
+	Kid: Yes!
+	Dadish: What?
+	Kid: I appeared in the first real level!
+	Dadish: The others weren't levels?
+	Kid: The others were too simple!
+	Dadish: Sure!
+elif GameManager.current_area == 7:
+	Kid: Wait... do you know why there is a penguin in the level?
+	Dadish: I actually don't know at all...
+	Kid: Is that an Adelie Penguin?
+	Dadish: No, it's a Chinstrap Penguin!
+	Kid: How do you know?
+	Dadish: I don't know.
+	Kid: So it's an Adelie Penguin!
+	Dadish: Okay!
+elif GameManager.current_area == 8:
+	Kid: How do they manage to charge these saw blades?
+	Dadish: I still don't know...
+	Kid: Wait, you didn't know something?
+	Dadish: Yes!
+	Kid: What?
+	Dadish: The race of the penguin from last level.
+	Kid: Oh... are they Chinstrap Penguins?
+	Dadish: No, they are Adelie Penguins!
+	Kid: How do you know?
+	Dadish: ...
+	Kid: ...
+	Dadish: The last kid told me this!
+	Kid: Oh... so they are Chinstrap Penguins!
+	Dadish: if you say soo.
+elif GameManager.current_area == 9:
+	Kid: Falling blocks!!!
+	Dadish: What?
+	Kid: Falling blocks!!!
+	Dadish: What?
+	Kid: Falling blocks!!!
+	Dadish: What?
+	Kid: Falling blocks!!!
+	Dadish: ...
+	Dadish: Falling blocks!!!
+	Kid: What?
+elif GameManager.current_area == 10:
+	Kid: I hate you!
+	Dadish: Why?
+	Kid: You played football with his dead body!
+	Dadish: And?
+	Kid: And...
+	Kid: How am I supposed to eat him now?
+	Dadish: Why do you want to eat him?
+	Kid: I'm hungry for sugar!!!
+	Dadish: Sure!
+	set PlayerData.advancements[1] = 1
+elif GameManager.current_area == 11:
+	Kid: He is my idol.
+	Dadish: Me?
+	Kid: Nope!
+	Dadish: Who then?
+	Kid: Angrydish.
+	Dadish: Who?
+	Kid: The big white radish.
+	Dadish: You mean the big radish that only says "ah... uh... hi... oh... ouh" and that tried to kill me?
+	Kid: Yeah!
+	Dadish: okay !
+elif GameManager.current_area == 12:
+	Kid: Did you see the lava?
+	Dadish: Yeah?
+	Kid: That's so cool!!!
+	Dadish: Okay ?
+elif GameManager.current_area == 13:
+	Kid: Did you see the falling lava drops?
+	Dadish: Yes!
+	Kid: It's cool, right?
+	Dadish: No!
+	Kid: ...
+	Dadish: ...
+elif GameManager.current_area == 14:
+	Kid: I love fans!
+	Dadish: Why?
+	Kid: I can fly with them!
+	Dadish: Good point!
+elif GameManager.current_area == 15:
+	Kid: It's too hot!
+	Dadish: You know you are in a volcano, right?
+	Kid: Yes!
+	Dadish: So what are you doing here?
+	Kid: The next world is too cold.
+	Dadish: What is the next world?
+	Kid: It's... ... ...
+	Kid: I don't know.
+	Dadish: ...
+elif GameManager.current_area == 16:
+	Kid: Let me guess if you have the star!
+	Dadish: Okay...
+	if GameManager.has_star == 1:
+		Kid: You don't have it.
+	else:
+		Kid: You have it.
+	Dadish: ...
+	Dadish: How did you fail... you watched me get it.
+	Kid: ...
+	Kid: Okay, let me guess how many stars you have!
+	Dadish: Okay...
+	Kid: You have...
+	Kid: 2251782681536816553 stars!
+	Dadish: ...
+	Dadish: You know there are only 50 levels.
+	Kid: OH!
+	Dadish: ...
+elif GameManager.current_area == 17:
+	Kid: Fireball!
+	Dadish: Okay...
+elif GameManager.current_area == 18:
+	Kid: Do you think if I throw you in the lava it will make a skewer?
+	Dadish: Yes, but why do you want a skewer?
+	Kid: I'm hungry!
+	Dadish: ...
+elif GameManager.current_area == 19:
+	Kid: He breaks blocks.
+	Dadish: Yes.
+	Kid: Can you also do that?
+	Dadish: No?
+	Kid: No fun...
+elif GameManager.current_area == 20:
+	Kid: I am now gonna call this stinky boss Yuck Yuck Yuckgular!
+	Dadish: You know he is called like that?
+	Kid: Really?
+	Dadish: Yes.
+	Kid: No wonder he got mad when I called him stinky ugly Burgergular fan.
+	Dadish: You really called him like that?
+	Kid: Yes!
+	Dadish: That's why he wanted to throw you in lava.
+	Kid: Wait, he really wanted to do that???
+	Dadish: Yes!
+	Kid: ...
+	set PlayerData.advancements[4] = 1
+elif GameManager.current_area == 21:
+	Kid: Did you see all of the penguins?
+	Dadish: Not again...
+	Kid: What do you mean, again?
+	Dadish: I don't know.
+	Kid: So, not again!
+	Dadish: ...
+elif GameManager.current_area == 22:
+	Kid: Wait, isn't this mustard pot an enemy?
+	Dadish: Not anymore!
+	Kid: What do you mean by that?
+	Dadish: That he once was!
+	Kid: I never saw him in my life.
+	Dadish: He was the mount of the Foreman, third henchman to space Durnak!
+	Kid: Ooh... makes sense!
+elif GameManager.current_area == 23:
+	Screech: Screech!
+	Dadish: Oh my gosh...
+elif GameManager.current_area == 24:
+	Kid: He is doing some insane jumps!
+	Dadish: Me too!
+	Kid: No!
+	Dadish: Why?
+	Kid: You're not doing the jump!
+	Dadish: I can jump from a cliff too!
+	Kid: ...
+elif GameManager.current_area == 25:
+	Kid: He can throw fireballs?!
+	Dadish: No he can't!
+	Kid: Yes he can!
+	Dadish: No he can't!
+	Kid: Yes he can!
+	Dadish: That is mustard, not fire!
+	Kid: ...
+elif GameManager.current_area == 26:
+	Kid: He is like a railgun!
+	Dadish: Totally!
+	Kid: I love railguns!
+	Dadish: That's a bit dangerous, you know?
+	Kid: Oh, is he dangerous?
+	Dadish: No!
+	Kid: So... what do you know about railguns?
+	Dadish: Not a lot.
+	Kid: So railguns aren't dangerous!
+	Dadish: They are!
+	Kid: Ok...
+elif GameManager.current_area == 27:
+	Kid: I love this trio!
+	Dadish: What trio?
+	Kid: You, Mustard and Marshmallow!
+	Dadish: The white radish is against us!
+	Kid: Oh...
+	Dadish: So it's a duo.
+	Kid: Can I be with you to make a trio?
+	Dadish: No!
+	Kid: ...
+	set PlayerData.advancements[10] = 1
+elif GameManager.current_area == 28:
+	Kid: Did you know that penguins are always in groups of four or three?
+	Dadish: That's not true.
+	Kid: And how do you explain all of the penguin groups?
+	Dadish: It's a game!
+	Kid: Oh... makes sense.
+elif GameManager.current_area == 29:
+	Kid: I always thought that Angrydish could only move horizontally...
+	Dadish: Yeah, me too...
+	Kid: That's cool!
+	Dadish: No it isn't.
+	Kid: If you say so.
+elif GameManager.current_area == 30:
+	Kid: His name is Bluebeary. Do you know if it represents his blueberry fur color or...
+	Kid: That he is a little bear with blue fur?
+	Dadish: I don't know, but I prefer the second option!
+	Kid: Me too!
+	Screech: Screeech!!! (Me three!)
+	Dadish and Kid: Oh my gosh...
+	
+	set PlayerData.advancements[5] = 1
+set Engine.time_scale = 0
+
+set Dialogue.kid = true
+
+=> END

@@ -1,0 +1,155 @@
+[gd_scene load_steps=15 format=3 uid="uid://cbnby8vt6tovl"]
+
+[ext_resource type="Script" uid="uid://vgp4vn47dgxg" path="res://Assets/Scripts/yuckgular.gd" id="1_oit6r"]
+[ext_resource type="Texture2D" uid="uid://bgfref5bqkbw5" path="res://Assets/Sprites/ennemy.png" id="1_q8aif"]
+[ext_resource type="Texture2D" uid="uid://dosawsy2xpxto" path="res://Assets/Sprites/damage_block.png" id="3_q2cnr"]
+[ext_resource type="PackedScene" uid="uid://dmm6pv2fiuow3" path="res://Assets/Scenes/key_1.tscn" id="4_q2cnr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_735ct"]
+radius = 12.5
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_735ct"]
+size = Vector2(28, 6)
+
+[sub_resource type="Animation" id="Animation_oit6r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yuckgular/Area2D/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(160, 160, 32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_hneal"]
+resource_name = "die"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yuckgular/Area2D/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 192, 32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_735ct"]
+resource_name = "fall"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yuckgular/Area2D/Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(192, 160, 32, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hneal"]
+_data = {
+&"RESET": SubResource("Animation_oit6r"),
+&"die": SubResource("Animation_hneal"),
+&"fall": SubResource("Animation_735ct")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7q2e2"]
+radius = 65.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hneal"]
+radius = 11.5
+height = 27.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7q2e2"]
+size = Vector2(18, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2cnr"]
+size = Vector2(14.5, 4.375)
+
+[node name="Yuckgular" type="Node2D"]
+script = ExtResource("1_oit6r")
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_q8aif")
+region_enabled = true
+region_rect = Rect2(160, 160, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_735ct")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 13)
+shape = SubResource("RectangleShape2D_735ct")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_hneal")
+}
+
+[node name="throw" type="Area2D" parent="."]
+position = Vector2(64, -40)
+scale = Vector2(0.2, 0.2)
+
+[node name="Sprite2D" type="Sprite2D" parent="throw"]
+position = Vector2(2.3841858e-06, -6.914139e-06)
+scale = Vector2(5, 5)
+texture = ExtResource("3_q2cnr")
+region_enabled = true
+region_rect = Rect2(256, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="throw"]
+shape = SubResource("CircleShape2D_7q2e2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D"]
+scale = Vector2(2, 2)
+texture = ExtResource("1_q8aif")
+region_enabled = true
+region_rect = Rect2(0, 192, 32, 32)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_hneal")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 26)
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_735ct")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, -25.5)
+shape = SubResource("RectangleShape2D_7q2e2")
+
+[node name="jump" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="jump"]
+position = Vector2(-1, -29)
+shape = SubResource("RectangleShape2D_q2cnr")
+
+[node name="Key_1" parent="." instance=ExtResource("4_q2cnr")]
+position = Vector2(0, -103)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="throw" to="." method="_on_throw_area_entered"]
+[connection signal="body_entered" from="throw" to="." method="_on_throw_body_entered"]
+[connection signal="body_entered" from="jump" to="." method="_on_jump_body_entered"]

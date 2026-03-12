@@ -1,0 +1,53 @@
+~ start
+
+if GameManager.has_dialogue == false:
+	set GameManager.Boss = true
+	
+	=> END
+
+if GameManager.current_area == 10:
+	???: HELLO!
+	Dadish: Hm... hello?
+	???: I am Sweetcandy the First!
+	Dadish: Hi Sweetcandle the First!
+	Sweetcandy the First: SWEETCANDY NOT SWEETCANDLE!!!
+	Sweetcandy the First: And you, what's your name?
+	Dadish: Dadish.
+	Sweetcandy the First: I'll kill you!!!
+	Dadish: Why?
+	Sweetcandy the First: Because I am the most handsome, stylish and tasteful candy!!!
+	Dadish: And?
+	Sweetcandy the First: I'll kill you!!!
+	Dadish: Ok... here we go again.
+elif GameManager.current_area == 20:
+	Dadish: Hm... hello!
+	???: I am Yuck Yuck Yuckgular!
+	Dadish: Oh so you're a Burgergular fan?
+	Yuck Yuck Yuckgular: What?!
+	Dadish: You cosplay just like him!
+	Yuck Yuck Yuckgular: Oh... ok!
+	Yuck Yuck Yuckgular: Do you know when the lava will rise again?
+	Dadish: No... why?
+	Yuck Yuck Yuckgular: I want to make a tiny radish cook!
+	Dadish: Why?
+	Yuck Yuck Yuckgular: Because I hate him!
+	Dadish: Why?
+	Yuck Yuck Yuckgular: Because he is a pest!
+	Dadish: Why?
+	Yuck Yuck Yuckgular: Shush!
+	Dadish: Why?
+	Yuck Yuck Yuckgular: I'll kill you!
+elif GameManager.current_area == 30:
+	Dadish: Hello, I'm Dadish, who are you?
+	???: Hi! I am Bluebeary, first bear to lord Durnak!
+	Dadish: Durnak?!
+	Bluebeary: Drunak!
+	Dadish: No!
+	Bluebeary: Yes!
+	Dadish: No!
+	Bluebeary: I'll kill you!
+
+
+set GameManager.Boss = true
+
+=> END

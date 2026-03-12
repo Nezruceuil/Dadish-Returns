@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://ca7tuy4hb8two"]
+
+[ext_resource type="AudioStream" uid="uid://b7hprd24wf7p0" path="res://Assets/Sprites/Dadish - 14:02:2026 16.07.mp3" id="1_8bji0"]
+[ext_resource type="Script" uid="uid://rhmnqf3fnfxu" path="res://Assets/Scripts/music.gd" id="1_hu551"]
+[ext_resource type="AudioStream" uid="uid://cw3us81b7ru5d" path="res://Assets/Sprites/Dadish_var - 21:02:2026 11.34.mp3" id="2_hu551"]
+[ext_resource type="AudioStream" uid="uid://blya10tuyi508" path="res://Assets/Sprites/Dadish_w1 - 09:03:2026 19.12.mp3" id="4_miuwg"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_miuwg"]
+streams_count = 2
+stream_0/stream = ExtResource("1_8bji0")
+stream_0/weight = 75.0
+stream_1/stream = ExtResource("2_hu551")
+stream_1/weight = 25.0
+
+[node name="Music" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hu551")
+
+[node name="Menu" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_miuwg")
+autoplay = true
+bus = &"Music"
+playback_type = 1
+
+[node name="W1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_miuwg")
+autoplay = true
+bus = &"Music"
+playback_type = 1
+parameters/looping = true
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

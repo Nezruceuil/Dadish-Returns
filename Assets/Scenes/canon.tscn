@@ -1,0 +1,204 @@
+[gd_scene load_steps=9 format=3 uid="uid://bsyvlh5kg6f8m"]
+
+[ext_resource type="Script" uid="uid://b3i30037nlrpp" path="res://Assets/Scripts/canon.gd" id="1_2c6p3"]
+[ext_resource type="Texture2D" uid="uid://gwnfu06smm0h" path="res://Assets/Sprites/block.png" id="1_nxywu"]
+[ext_resource type="Texture2D" uid="uid://bgfref5bqkbw5" path="res://Assets/Sprites/ennemy.png" id="2_7ma6y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2c6p3"]
+radius = 4.0
+height = 10.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ma6y"]
+size = Vector2(16, 16)
+
+[sub_resource type="Animation" id="Animation_0k5re"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(96, 112, 16, 16)]
+}
+
+[sub_resource type="Animation" id="Animation_2c6p3"]
+resource_name = "shot"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Rect2(112, 112, 16, 16), Rect2(112, 112, 16, 16), Rect2(96, 112, 16, 16)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iibuk"]
+_data = {
+&"RESET": SubResource("Animation_0k5re"),
+&"shot": SubResource("Animation_2c6p3")
+}
+
+[node name="canon" type="Node2D"]
+script = ExtResource("1_2c6p3")
+
+[node name="shot1" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot1"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot1"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot2" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot2"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot2"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot3" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot3"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot3"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot4" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot4"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot4"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot5" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot5"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot5"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot6" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot6"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot6"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot7" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot7"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot7"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot8" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot8"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot8"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot9" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot9"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot9"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="shot10" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="shot10"]
+rotation = -1.5707964
+texture = ExtResource("2_7ma6y")
+region_enabled = true
+region_rect = Rect2(64, 80, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shot10"]
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2c6p3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_nxywu")
+region_enabled = true
+region_rect = Rect2(96, 112, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_7ma6y")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StaticBody2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_iibuk")
+}
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[connection signal="body_entered" from="shot1" to="." method="_on_shot_1_body_entered"]
+[connection signal="body_entered" from="shot2" to="." method="_on_shot_2_body_entered"]
+[connection signal="body_entered" from="shot3" to="." method="_on_shot_3_body_entered"]
+[connection signal="body_entered" from="shot4" to="." method="_on_shot_4_body_entered"]
+[connection signal="body_entered" from="shot5" to="." method="_on_shot_5_body_entered"]
+[connection signal="body_entered" from="shot6" to="." method="_on_shot_6_body_entered"]
+[connection signal="body_entered" from="shot7" to="." method="_on_shot_7_body_entered"]
+[connection signal="body_entered" from="shot8" to="." method="_on_shot_8_body_entered"]
+[connection signal="body_entered" from="shot9" to="." method="_on_shot_9_body_entered"]
+[connection signal="body_entered" from="shot10" to="." method="_on_shot_10_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

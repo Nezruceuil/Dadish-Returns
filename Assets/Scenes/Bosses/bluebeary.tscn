@@ -1,0 +1,108 @@
+[gd_scene load_steps=13 format=3 uid="uid://c625ndt6i3ty0"]
+
+[ext_resource type="Texture2D" uid="uid://bgfref5bqkbw5" path="res://Assets/Sprites/ennemy.png" id="1_cebff"]
+[ext_resource type="Script" uid="uid://74qaasd8n118" path="res://Assets/Scripts/bluebeary.gd" id="1_u2x3f"]
+[ext_resource type="Script" uid="uid://c6jvofenxqhqc" path="res://Assets/Scenes/Bosses/bluebeary_colision.gd" id="3_lfpjb"]
+[ext_resource type="Texture2D" uid="uid://bul1rg1p4fbdk" path="res://Assets/Sprites/fish.png" id="4_i0p4w"]
+[ext_resource type="PackedScene" uid="uid://dmm6pv2fiuow3" path="res://Assets/Scenes/key_1.tscn" id="5_2h0c6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cebff"]
+size = Vector2(22, 12)
+
+[sub_resource type="Animation" id="Animation_cebff"]
+resource_name = "swim"
+length = 0.6
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(64, 160, 32, 32), Rect2(96, 160, 32, 32), Rect2(128, 160, 32, 32), Rect2(64, 160, 32, 32)]
+}
+
+[sub_resource type="Animation" id="Animation_u2x3f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(64, 160, 32, 32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u2x3f"]
+_data = {
+&"RESET": SubResource("Animation_u2x3f"),
+&"swim": SubResource("Animation_cebff")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u2x3f"]
+size = Vector2(10, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lfpjb"]
+size = Vector2(29, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i0p4w"]
+radius = 5.0
+height = 16.0
+
+[node name="Bluebeary" type="Node2D"]
+script = ExtResource("1_u2x3f")
+
+[node name="boss" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="boss"]
+scale = Vector2(1.5, 1.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="boss/Area2D"]
+position = Vector2(4, -3)
+texture = ExtResource("1_cebff")
+region_enabled = true
+region_rect = Rect2(64, 160, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss/Area2D"]
+shape = SubResource("RectangleShape2D_cebff")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="boss/Area2D"]
+libraries = {
+&"": SubResource("AnimationLibrary_u2x3f")
+}
+autoplay = "swim"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boss/Area2D"]
+position = Vector2(14, -3.25)
+shape = SubResource("RectangleShape2D_u2x3f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="boss"]
+script = ExtResource("3_lfpjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boss/StaticBody2D"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_lfpjb")
+
+[node name="fish" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="fish"]
+texture = ExtResource("4_i0p4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fish"]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_i0p4w")
+
+[node name="Key_1" parent="." instance=ExtResource("5_2h0c6")]
+position = Vector2(0, -83)
+
+[connection signal="body_entered" from="boss/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="fish" to="." method="_on_fish_body_entered"]

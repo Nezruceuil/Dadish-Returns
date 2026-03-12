@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://banexuatxrbvy"]
+
+[ext_resource type="Script" uid="uid://cjflf56d607e0" path="res://Assets/Scripts/boss_camera.gd" id="1_7exff"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aiagy"]
+size = Vector2(302.22223, 168.77779)
+
+[node name="boss_camera" type="Node2D"]
+script = ExtResource("1_7exff")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 3.0500002)
+scale = Vector2(0.9, 0.9)
+shape = SubResource("RectangleShape2D_aiagy")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

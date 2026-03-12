@@ -1,0 +1,497 @@
+[gd_scene load_steps=35 format=3 uid="uid://cl487uiwdfbf8"]
+
+[ext_resource type="Texture2D" uid="uid://3vcd0ub8tn4k" path="res://Assets/Sprites/dadish idle-Sheet.png" id="1_6cd4h"]
+[ext_resource type="Script" uid="uid://bv78co6244xoo" path="res://Assets/Scripts/player_controller.gd" id="1_7dd06"]
+[ext_resource type="Script" uid="uid://je0xnd1smtq5" path="res://Assets/Scripts/player_animator.gd" id="2_38rej"]
+
+[sub_resource type="Animation" id="Animation_38rej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(44, 66, 22, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_lerqx"]
+resource_name = "die"
+length = 2.0
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(0, 66, 22, 22), Rect2(0, 66, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(66, 88, 22, 22), Rect2(66, 88, 22, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_c3tg1"]
+resource_name = "2jump"
+length = 1.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.90000004, 1, 1.1, 1.2, 1.3000001, 1.4, 1.5, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(88, 22, 22, 22), Rect2(88, 22, 22, 22), Rect2(110, 22, 22, 22), Rect2(110, 22, 22, 22), Rect2(0, 44, 22, 22), Rect2(0, 44, 22, 22), Rect2(22, 44, 22, 22), Rect2(22, 44, 22, 22), Rect2(44, 44, 22, 22), Rect2(44, 44, 22, 22), Rect2(66, 44, 22, 22), Rect2(66, 44, 22, 22), Rect2(88, 44, 22, 22), Rect2(88, 44, 22, 22), Rect2(110, 44, 22, 22), Rect2(110, 44, 22, 22), Rect2(88, 22, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(44, 88, 22, 22), Rect2(44, 88, 22, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_w3t24"]
+resource_name = "fall"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(66, 22, 22, 22), Rect2(66, 22, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(44, 88, 22, 22), Rect2(44, 88, 22, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_7dd06"]
+resource_name = "idle"
+length = 2.25
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 22, 22), Rect2(0, 0, 22, 22), Rect2(0, 0, 22, 22), Rect2(22, 0, 22, 22), Rect2(44, 0, 22, 22), Rect2(22, 0, 22, 22), Rect2(0, 0, 22, 22), Rect2(0, 0, 22, 22), Rect2(0, 0, 22, 22), Rect2(0, 0, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 0.75, 1, 1.25, 1.5, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(44, 66, 22, 22), Rect2(44, 66, 22, 22), Rect2(66, 66, 22, 22), Rect2(88, 66, 22, 22), Rect2(66, 66, 22, 22), Rect2(44, 66, 22, 22), Rect2(44, 66, 22, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_23lac"]
+resource_name = "jump"
+length = 0.5
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(44, 22, 22, 22), Rect2(44, 22, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Rect2(22, 88, 22, 22), Rect2(22, 88, 22, 22)]
+}
+
+[sub_resource type="Animation" id="Animation_t1xgp"]
+resource_name = "move"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerAnimator/dadish:region_rect")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(66, 0, 22, 22), Rect2(88, 0, 22, 22), Rect2(110, 0, 22, 22), Rect2(0, 22, 22, 22), Rect2(66, 0, 22, 22)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerAnimator/possum:region_rect")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(110, 66, 22, 22), Rect2(0, 88, 22, 22), Rect2(110, 66, 22, 22), Rect2(0, 88, 22, 22), Rect2(110, 66, 22, 22)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_38rej"]
+_data = {
+&"RESET": SubResource("Animation_38rej"),
+&"die": SubResource("Animation_lerqx"),
+&"douplejump": SubResource("Animation_c3tg1"),
+&"fall": SubResource("Animation_w3t24"),
+&"idle": SubResource("Animation_7dd06"),
+&"jump": SubResource("Animation_23lac"),
+&"move": SubResource("Animation_t1xgp")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7dd06"]
+radius = 8.0
+height = 17.499998
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23lac"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w3t24"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c3tg1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lerqx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_38rej"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_38rej"]
+button_index = 6
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_t1xgp"]
+events = [SubResource("InputEventJoypadButton_38rej")]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jp3cw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ecf78"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vy5gb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rsrmw"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_t1xgp"]
+button_index = 6
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_w3t24"]
+events = [SubResource("InputEventJoypadButton_t1xgp")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_23lac"]
+bg_color = Color(1, 0, 0, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(1, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w3t24"]
+bg_color = Color(1, 0.2739889, 0.21327025, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c3tg1"]
+bg_color = Color(0.92629945, 2.430603e-06, 1.92523e-06, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1xgp"]
+
+[sub_resource type="InputEventJoypadButton" id="InputEventJoypadButton_c3tg1"]
+button_index = 1
+pressed = true
+
+[sub_resource type="Shortcut" id="Shortcut_lerqx"]
+events = [SubResource("InputEventJoypadButton_c3tg1")]
+
+[sub_resource type="Animation" id="Animation_ecf78"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 21, 6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("grass:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jp3cw"]
+resource_name = "start"
+length = 2.0
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("grass:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Rect2(0, 0, 21, 11), Rect2(0, 0, 21, 11), Rect2(0, 0, 21, 11), Rect2(0, 0, 21, 11)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("grass:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0.5), Vector2(0, 1.5), Vector2(0, 0.5), Vector2(0, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vy5gb"]
+_data = {
+&"RESET": SubResource("Animation_ecf78"),
+&"start": SubResource("Animation_jp3cw")
+}
+
+[node name="Player" type="CharacterBody2D"]
+floor_stop_on_slope = false
+floor_block_on_wall = false
+script = ExtResource("1_7dd06")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(5, -15)
+zoom = Vector2(6.5, 6.5)
+
+[node name="PlayerAnimator" type="Node2D" parent="." node_paths=PackedStringArray("player_controler", "animation_player")]
+script = ExtResource("2_38rej")
+player_controler = NodePath("..")
+animation_player = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerAnimator"]
+reset_on_save = false
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_38rej")
+}
+autoplay = "idle"
+speed_scale = 1.5
+
+[node name="dadish" type="Sprite2D" parent="PlayerAnimator"]
+visible = false
+position = Vector2(0.5, -8.8)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_6cd4h")
+offset = Vector2(0, 0.1)
+region_enabled = true
+region_rect = Rect2(0, 0, 22, 22)
+
+[node name="possum" type="Sprite2D" parent="PlayerAnimator"]
+visible = false
+position = Vector2(-0.9999981, -8)
+scale = Vector2(0.7, 0.724)
+texture = ExtResource("1_6cd4h")
+offset = Vector2(0.5, 1.15)
+region_enabled = true
+region_rect = Rect2(44, 66, 22, 22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -7)
+scale = Vector2(0.8, 0.8)
+shape = SubResource("CapsuleShape2D_7dd06")
+
+[node name="Control" type="Node2D" parent="."]
+z_index = 1
+position = Vector2(71, -65)
+
+[node name="Button" type="Button" parent="Control"]
+offset_left = 4.0
+offset_top = -2.0
+offset_right = 30.0
+offset_bottom = 21.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_23lac")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w3t24")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_c3tg1")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_lerqx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38rej")
+toggle_mode = true
+shortcut = SubResource("Shortcut_t1xgp")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "||"
+
+[node name="Button2" type="Button" parent="Control"]
+visible = false
+offset_left = 5.0
+offset_top = -2.0
+offset_right = 28.0
+offset_bottom = 21.0
+scale = Vector2(0.75, 0.75)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jp3cw")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ecf78")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vy5gb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_rsrmw")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_38rej")
+toggle_mode = true
+shortcut = SubResource("Shortcut_w3t24")
+shortcut_feedback = false
+shortcut_in_tooltip = false
+text = "|>"
+
+[node name="Pause" type="Panel" parent="Control"]
+visible = false
+offset_left = -127.0
+offset_top = 20.0
+offset_right = -7.0
+offset_bottom = 80.66667
+
+[node name="Label" type="Label" parent="Control/Pause"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -2.0
+offset_right = 133.0
+offset_bottom = 21.0
+scale = Vector2(0.75, 0.75)
+text = "GAME PAUSED!"
+
+[node name="Quit" type="Button" parent="Control/Pause"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 27.0
+offset_right = 152.0
+offset_bottom = 90.0
+scale = Vector2(0.3, 0.3)
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_23lac")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w3t24")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c3tg1")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_t1xgp")
+shortcut = SubResource("Shortcut_lerqx")
+text = "QUIT"
+
+[node name="timer" type="Label" parent="."]
+z_index = 1
+offset_left = -83.0
+offset_top = -66.0
+offset_right = 77.0
+offset_bottom = -21.0
+scale = Vector2(0.2, 0.2)
+theme_override_font_sizes/font_size = 32
+
+[node name="grass" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(0, -1)
+texture = ExtResource("1_6cd4h")
+region_enabled = true
+region_rect = Rect2(0, 0, 21, 6)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_vy5gb")
+}
+autoplay = "start"
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Button2" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/Pause/Quit" to="." method="_on_quit_pressed"]

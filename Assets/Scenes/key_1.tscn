@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmm6pv2fiuow3"]
+
+[ext_resource type="Script" uid="uid://x6g0la04q8f8" path="res://Assets/Scripts/key.gd" id="1_f7i8n"]
+[ext_resource type="Texture2D" uid="uid://gwnfu06smm0h" path="res://Assets/Sprites/block.png" id="1_mhv5c"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f7i8n"]
+radius = 2.0
+height = 8.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yfxf1"]
+radius = 3.0
+height = 8.0
+
+[node name="Key_1" type="Area2D"]
+script = ExtResource("1_f7i8n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_mhv5c")
+region_enabled = true
+region_rect = Rect2(80, 48, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_f7i8n")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-3, -1)
+shape = SubResource("CapsuleShape2D_yfxf1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

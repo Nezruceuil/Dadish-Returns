@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjo3ni6334v45"]
+
+[ext_resource type="Script" uid="uid://gi1frweqdfxb" path="res://Assets/Scripts/block.gd" id="1_2atl8"]
+[ext_resource type="Texture2D" uid="uid://gwnfu06smm0h" path="res://Assets/Sprites/block.png" id="2_o1cyv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2atl8"]
+radius = 16.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2atl8"]
+size = Vector2(32, 30)
+
+[node name="big_block" type="RigidBody2D"]
+mass = 8.0
+gravity_scale = 1.5
+lock_rotation = true
+freeze_mode = 1
+script = ExtResource("1_2atl8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, -24)
+texture = ExtResource("2_o1cyv")
+region_enabled = true
+region_rect = Rect2(80, 64, 16, 16)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(8, -24)
+texture = ExtResource("2_o1cyv")
+region_enabled = true
+region_rect = Rect2(64, 64, 16, 16)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-8, -8)
+texture = ExtResource("2_o1cyv")
+region_enabled = true
+region_rect = Rect2(48, 64, 16, 16)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(8, -8)
+texture = ExtResource("2_o1cyv")
+region_enabled = true
+region_rect = Rect2(96, 64, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("CircleShape2D_2atl8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17)
+shape = SubResource("RectangleShape2D_2atl8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

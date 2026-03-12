@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://neo58simrkp8"
+path="res://.godot/imported/bosses.dialogue-a063c9a48177b7535874e8ad72282cc2.tres"
+
+[deps]
+
+source_file="res://Assets/dialogue/bosses.dialogue"
+dest_files=["res://.godot/imported/bosses.dialogue-a063c9a48177b7535874e8ad72282cc2.tres"]
+
+[params]
+
+defaults=true

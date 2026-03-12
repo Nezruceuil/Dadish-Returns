@@ -21,7 +21,7 @@ L and R for world switch
 
 ## Features
 - Works Offline !
-- Supports Nintendo Controller !
+- Supports Controller !
 - Save your progress !
 
 ## Credits

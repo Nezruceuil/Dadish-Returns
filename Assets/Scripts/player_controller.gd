@@ -23,6 +23,7 @@ var boss = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var player_animator: Node2D = $PlayerAnimator
 @onready var time: Label = $timer
+@onready var start: Label = $Label
 
 
 
@@ -35,6 +36,7 @@ var y = 0
 @onready var possum: Sprite2D = $PlayerAnimator/possum
 
 func _ready() -> void:
+	start.visible = true
 	GameManager.has_started = false
 	grass.visible = true
 	boss = false
@@ -51,6 +53,7 @@ func _process(delta: float) -> void:
 		dadish.visible = false
 		grass.visible = true
 		if Input.is_action_just_pressed("jump"):
+			start.visible = false
 			grass.visible = false
 			collision_shape_2d.disabled = false
 			

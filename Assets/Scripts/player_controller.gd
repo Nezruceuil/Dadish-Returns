@@ -23,8 +23,8 @@ var boss = false
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var player_animator: Node2D = $PlayerAnimator
 @onready var time: Label = $timer
-@onready var start: Label = $Label
 
+const BOSS_DIALOGUE = preload("res://Assets/dialogue/bosses.dialogue")
 
 
 var y = 0
@@ -36,7 +36,9 @@ var y = 0
 @onready var possum: Sprite2D = $PlayerAnimator/possum
 
 func _ready() -> void:
-	start.visible = true
+	if not is_instance_valid(GameManager) or not is_instance_valid(PlayerData):
+		push_error("PlayerController: AutoLoad not ready")
+		return
 	GameManager.has_started = false
 	grass.visible = true
 	boss = false
@@ -53,7 +55,6 @@ func _process(delta: float) -> void:
 		dadish.visible = false
 		grass.visible = true
 		if Input.is_action_just_pressed("jump"):
-			start.visible = false
 			grass.visible = false
 			collision_shape_2d.disabled = false
 			
@@ -111,7 +112,7 @@ func _physics_process(delta: float) -> void:
 					control.position.y = y * -2 + 22.50 - 50
 					time.position.y = y * -2 + 22.50 - 50
 				else:
-					GameManager.respawn()
+					call_deferred("_do_respawn")
 				y += 1
 			else:
 				# Add the gravity.
@@ -164,7 +165,8 @@ func _physics_process(delta: float) -> void:
 				if GameManager.camera == 1:
 					if is_on_floor():
 						if boss == false:
-							DialogueManager.show_dialogue_balloon(load("res://Assets/dialogue/bosses.dialogue"), "start")
+							if is_instance_valid(DialogueManager):
+								DialogueManager.show_dialogue_balloon(BOSS_DIALOGUE, "start")
 							boss = true
 					camera_2d.enabled = false
 					control.visible = false
@@ -220,3 +222,7 @@ func _on_quit_pressed() -> void:
 			if GameManager.current_area == PlayerData.level_done - 1:
 				PlayerData.level_done -= 1
 	get_tree().change_scene_to_file("res://Assets/Scenes/Area Functionality/main_menu1.tscn")
+
+
+func _do_respawn():
+	GameManager.respawn()

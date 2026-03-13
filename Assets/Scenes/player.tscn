@@ -478,6 +478,7 @@ offset_right = 77.0
 offset_bottom = -21.0
 scale = Vector2(0.2, 0.2)
 theme_override_font_sizes/font_size = 32
+text = "jump to start !"
 
 [node name="grass" type="Sprite2D" parent="."]
 z_index = -1
@@ -491,16 +492,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_vy5gb")
 }
 autoplay = "start"
-
-[node name="Label" type="Label" parent="."]
-offset_left = -83.0
-offset_top = -66.0
-offset_right = 372.0
-offset_bottom = 22.0
-scale = Vector2(0.1, 0.1)
-theme_override_colors/font_color = Color(1, 1, 1, 0.7176471)
-theme_override_font_sizes/font_size = 64
-text = "space to start !"
 
 [connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Control/Button2" to="." method="_on_button_pressed"]

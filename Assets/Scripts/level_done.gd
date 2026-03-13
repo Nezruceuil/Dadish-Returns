@@ -26,8 +26,13 @@ var star = 0
 @onready var star_10: Label = $stars/Star_10
 @onready var label: Label = $Label
 
+var level_changing = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if not is_instance_valid(GameManager):
+		push_error("GameManager not found")
+		return
 	Engine.time_scale = 2
 	sprite_2d_2.region_rect.position.x = (GameManager.current_area - 1) * 21
 	sprite_2d.position.x = 60
@@ -49,7 +54,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump"):
-		if press == true:
+		if press == true and level_changing == false:
+			level_changing = true
 			Engine.time_scale = 1
 			GameManager.next_level()
 		else:
@@ -85,7 +91,8 @@ func _process(delta: float) -> void:
 	node_2d.move_local_y(-30*delta)
 	y -= 30*delta
 	
-	if y < -110:
+	if y < -110 and level_changing == false:
+		level_changing = true
 		GameManager.next_level()
 
 

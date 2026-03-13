@@ -260,7 +260,6 @@ elif GameManager.current_area == 30:
 	Dadish and Kid: Oh my gosh...
 	
 	set PlayerData.advancements[5] = 1
-set Engine.time_scale = 0
 
 set Dialogue.kid = true
 

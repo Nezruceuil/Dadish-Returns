@@ -9,7 +9,7 @@ class_name Music
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _ready() -> void:
-	_on_timer_timeout()
+	call_deferred("_on_timer_timeout")
 
 
 func _on_timer_timeout() -> void:

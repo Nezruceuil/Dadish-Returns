@@ -1,5 +1,4 @@
 extends Node
-# Chemin du fichier de sauvegarde
 const SAVE_PATH := "user://save.json"
 @export var data = {}
 
@@ -12,11 +11,14 @@ func save_game(data: Dictionary) -> void:
 		star_count = PlayerData.star_count,
 		world =  PlayerData.world,
 		character = PlayerData.character,
-		times = PlayerData.times,
+		times = PlayerData.times.map(func(x): return float(x)),
 		SFX = PlayerData.SFX,
 		MUSIC = PlayerData.MUSIC
 	}
 	var file := FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if file == null:
+		push_error("Save failed, error code: " + str(FileAccess.get_open_error()))
+		return
 	if file == null:
 		push_error("Cannot read file : " + SAVE_PATH)
 		return
@@ -42,15 +44,17 @@ func load_game() -> Dictionary:
 		return {}
 	var save_data := parsed as Dictionary
 	print("Save worked")
-	PlayerData.advancements = Array(save_data.get("advancements", []))
-	PlayerData.level = Array(save_data.get("level", []))
-	PlayerData.times = Array(save_data.get("times", []))
-	PlayerData.level_done = save_data.get("level_done", [])
-	PlayerData.star_count = save_data.get("star_count", [])
-	PlayerData.world = save_data.get("world", [])
-	PlayerData.character = save_data.get("character", [])
-	PlayerData.SFX = save_data.get("SFX", [])
-	PlayerData.MUSIC = save_data.get("MUSIC", [])
+	PlayerData.advancements = Array(save_data.get("advancements", PlayerData.advancements))
+	PlayerData.level = Array(save_data.get("level", PlayerData.level))
+	PlayerData.times = Array(save_data.get("times", PlayerData.times))
+	PlayerData.times = Array(save_data.get("times", [])).map(func(x): return float(x))
+	PlayerData.times.resize(50)
+	PlayerData.level_done = save_data.get("level_done", 1)
+	PlayerData.star_count = save_data.get("star_count", 0)
+	PlayerData.world = save_data.get("world", 0)
+	PlayerData.character = save_data.get("character", 0)
+	PlayerData.SFX = save_data.get("SFX", 500)
+	PlayerData.MUSIC = save_data.get("MUSIC", 500)
 	return save_data
 
 # Save exist ?

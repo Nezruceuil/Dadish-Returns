@@ -12,7 +12,12 @@ class_name  player_data
 @export var SFX = 500
 @export var MUSIC = 500
 
+var done = false
+
 func _ready():
-	times.resize(50)
-	times.fill(100000)
-	SaveManager.load_game()
+	if done == false:
+		done = true
+		times.resize(50)
+		times.fill(100000)
+		
+		SaveManager.load_game()

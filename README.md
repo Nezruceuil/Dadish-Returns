@@ -12,6 +12,7 @@ https://nezruceuil.itch.io/dadish-returns
 
 # With Keyboard:
 arrow keys or Q'left' and D'right' and mouse
+space to jump and start !
 
 # With Controller:
 joystick or joypad for movements and chose

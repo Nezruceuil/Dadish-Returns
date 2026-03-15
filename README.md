@@ -26,8 +26,11 @@ L and R for world switch
 - Save your progress !
 
 ## Credits
-Nezruceuil
-PLP
+###CODE: Nezruceuil
+
+###ART: Nezruceuil
+
+###MUSIC: PLP
 
 ## License
 MIT
